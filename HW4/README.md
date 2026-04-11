@@ -14,14 +14,26 @@ results = solve_all(pairs, deadline)
 
 You do not know in advance how many pairs you will be evaluated on. Your agent must manage its own time.
 
-**Scoring:** each pair scores `max(0, 15 − steps)` if the target is reached, else 0. Shorter paths score higher. You will be evaluated on **3 test sets of different sizes** (roughly 10, 15, and 25 pairs) — your agent must work well regardless of how many pairs it receives. Your final grade is based on the total score across all three sets.
+**Scoring:** each pair scores `max(0, 15 − steps)` if the target is reached, else 0. A path completed in 1 step scores 14, in 14 steps scores 1, in 15 or more steps scores 0. Pairs where the target is not reached score 0. You will be evaluated on **3 test sets of different sizes** (roughly 10, 15, and 20 pairs) — your agent must work well regardless of how many pairs it receives. Your final agent score is the total across all three sets.
+
+**Grading:** your agent score counts for **70%** of the homework grade, evaluated on a curve relative to the class — you are not penalized for the problem being hard, only for how you do relative to your peers. The remaining **30%** is a written reflection (see below).
 
 ---
 
 ## What to submit
 
-1. **`firstname1firstname2.py`** — your agent file, renamed with both team members' first names (e.g. `nikhilsweety.py`)
-2. **One written page** — describe the design strategy you adopted: how you manage time, how you prompt the LLM, what optimizations you made, and what you tried that didn't work
+1. **`alice_bob.py`** — your agent file, renamed with both team members' first names separated by an underscore (e.g. `alice_bob.py`)
+2. **`alice_bob_writeup.md`** — a one-page markdown file, same naming convention, responding to the two questions below
+
+---
+
+## Written reflection (30%)
+
+Answer both questions in about one page total. There are no right answers — we are looking for honest, specific reflection grounded in what you actually built and observed.
+
+**Q1. Where did your agent break down, and what did that reveal about how LLMs reason?**
+
+**Q2. What is one principle you take away from this that you would apply the next time you build anything with an LLM?**
 
 ---
 
@@ -34,7 +46,7 @@ Your agent must use **Gemini 2.5 Flash** (`gemini-2.5-flash`). This is the model
 **The most important thing:** your agent must be evaluable by `score.py`. Run this before submitting and confirm it produces a score:
 
 ```bash
-python score.py --agent firstname1firstname2.py --pairs practice_pairs.csv
+python score.py --agent alice_bob.py --pairs practice_pairs.csv
 ```
 
 `score.py` accepts any `.py` file via `--agent`. It loads your file, calls `solve_all(pairs, deadline)`, and scores the results. The only requirement is that the function exists, uses Gemini 2.5 Flash, and returns the right format in time.
