@@ -1,0 +1,26 @@
+   test 1
+=================================================================
+  Agent  : saksham_uday.py
+  Pairs  : practice_pairs.csv  (10 pairs)
+  Budget : 120s total  |  15 pts max per pair
+=================================================================
+
+  ✓ [easy]   Cricket                → Industrial Revolution     valid  2 steps → 13 pts
+  ✓ [easy]   Coffee                 → Ancient Greece            valid  10 steps → 5 pts
+  ✓ [easy]   Samurai                → Buddhism                  valid  1 steps → 14 pts
+  ✓ [medium] Photosynthesis         → World War II              valid  2 steps → 13 pts
+  ✗ [medium] Chocolate              → Roman law                 target not reached (ended at: Petty nobility)
+  ✗ [medium] Ballet                 → Computer science          path must be a list with ≥ 2 URLs    
+  ✗ [hard]   Jazz                   → Mathematics               path must be a list with ≥ 2 URLs    
+  ✗ [hard]   Yoga                   → Nuclear physics           path must be a list with ≥ 2 URLs    
+  ✗ [medium] Telescope              → Renaissance               path must be a list with ≥ 2 URLs    
+  ✗ [hard]   Haiku                  → Plate tectonics           path must be a list with ≥ 2 URLs    
+
+=================================================================
+  Score   : 45/150  (30.0%)
+  Reached : 4/10 pairs
+  Avg steps (reached): 3.8
+  Agent time: 121.2s
+=================================================================
+
+
